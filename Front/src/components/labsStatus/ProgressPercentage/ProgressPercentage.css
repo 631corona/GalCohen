@@ -1,0 +1,18 @@
+table.progressPercentage{
+    width:60%;
+    align-items: center;
+}
+th.progressPercentage{
+    padding: 5px;
+    font-weight: bold;
+}
+td{
+    text-align: right;
+    color: white;
+    padding:10px;
+    margin:auto;
+    border:1;
+    border: 1px white solid;
+    vertical-align: bottom;
+    width:20%;
+}

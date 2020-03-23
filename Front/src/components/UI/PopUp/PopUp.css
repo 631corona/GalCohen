@@ -1,0 +1,22 @@
+div.PopUp{
+position: fixed;
+z-index: 500;
+background: linear-gradient(0deg, rgb(243, 186, 227), rgb(156, 186, 237));
+width: 45%;
+height: 35%;
+border: 1px solid #ccc;
+padding: 16px;
+left: 30%;
+top: 27%;
+box-sizing: border-box;
+box-shadow: 1px 1px 1px white;
+border-radius: 2px;
+display:flex;
+flex-flow: column;
+justify-content: center;
+}
+
+p.PopUp{
+    text-align: center;
+    font-size:35px;
+}

@@ -1,0 +1,31 @@
+p.soldiersAtHome{
+    background-color: white;
+    border-radius:20px;
+    width:50%;
+    height:90%;
+    display:flex;
+    flex-flow: center;
+    justify-content: space-around;
+    font-size:20px;
+}
+
+p.quarantinedSoldiers{
+font-size:30px;
+}
+
+li.quarantinedSoldier{
+    background-color: white;
+    border-radius:5px;
+    margin:15px;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    width: 55%;
+    padding: auto;
+    font-size:20px;
+}
+ul.quarantinedSoldiers{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}

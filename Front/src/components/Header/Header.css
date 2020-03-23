@@ -1,0 +1,17 @@
+.Header {
+    color:black;
+    font-family: 'Segoe UI',Tahoma;
+    font: inherit;
+    font-size: 40px;
+    background:white;
+    width: 60%;
+    padding: 15px 2px 15px;
+    border:100px;
+    text-align: center;
+    margin:auto;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px  gray;
+}
+.Header:hover{
+    background-color:rgb(241, 210, 214);
+}
