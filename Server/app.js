@@ -15,15 +15,51 @@ app.get("/v1/labs", (req, res, next) => {
             labs: [
                 {
                     id: 1,
-                    name: "chen",
+                    name: "חן",
                     status: status.Success,
-                    progress_percentile: 20
+                    progress_percentile: 90
                 },
                 {
                     id: 2,
-                    name: "dan",
+                    name: "דן",
                     status: status.Success,
+                    progress_percentile: 99
+                },
+                {
+                    id: 3,
+                    name: "דביר",
+                    status: status.Failed,
+                    progress_percentile: 0
+                },
+                {
+                    id: 4,
+                    name: "עמית",
+                    status: status.Failed,
                     progress_percentile: 10
+                },
+                {
+                    id: 5,
+                    name: "ליאת",
+                    status: status.InProgress,
+                    progress_percentile: 15
+                },
+                {
+                    id: 6,
+                    name: "אופיר",
+                    status: status.Failed,
+                    progress_percentile: 26
+                },
+                {
+                    id: 7,
+                    name: "רועי",
+                    status: status.InProgress,
+                    progress_percentile: 5
+                },
+                {
+                    id: 8,
+                    name: "עדי",
+                    status: status.Failed,
+                    progress_percentile: 74
                 }
             ]
         }
