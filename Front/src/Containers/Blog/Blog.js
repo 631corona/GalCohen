@@ -1,38 +1,24 @@
 import React, { Component } from 'react';
-import { Route, Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './Blog.css';
 import Header from '../../components/Header/Header';
-import Images from '../../components/Images/Images';
-import Graph from '../../components/labsStatus/Graph/Graph';
-import ProgressPercentage from '../../components/labsStatus/ProgressPercentage/ProgressPercentage';
-import QuarantinedSoldiers from '../../components/Quarantinedsoldiers/QuarantinedSoldiers';
-import HomePage from '../../components/HomePage/HomePage';
-import SideBar from '../SideBar/SideBar'
-
-
-const quarantinedSoldiersNames = [{ name: "Carmel dahan", id: 1 }, { name: "Gal Cohen", id: 2 }];
+import Content from '../../components/Content/Content';
+import Confetti from '../../components/Confetti/Confetti';
+import { connect } from 'react-redux';
+import Button from '../../components/UI/Button/Button';
 
 class Blog extends Component {
 
-    SideBarClickedHandler() {
-        switch (this.state.ShownComponentId) {
-            case 1:
-                return <Header />;
-            case 2:
-                return <Images />
-            case 3:
-                return <QuarantinedSoldiers soldiersAtHome="32" quarantinedSoldiersNames={quarantinedSoldiersNames} />;
-            case 4:
-                return <Graph />;
-            case 5:
-                return <ProgressPercentage />;
-        }
-    }
-
     render() {
+        let Conffeti = null;
+        if (this.props.cureFound) {
+            Conffeti = <Confetti />;
+        }
+        
         return (
             <div className="Blog"  >
+                {Conffeti}
                 <Header />
                 <header>
                     <nav>
@@ -49,11 +35,23 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
-                <SideBar quarantinedSoldiersNames={quarantinedSoldiersNames} />
+                <Content />
+                <Button clicked={() => this.props.onFindingCure()}> נמצאה תרופה </Button>
             </div>
         );
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        cureFound: state.cure.found
+    };
+};
 
-export default Blog;
+const mapDispatchToProps = dispatch => {
+    return {
+        onFindingCure: () => dispatch({ type: 'FOUND_CURE' })
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);

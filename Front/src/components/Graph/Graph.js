@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Chart from 'react-apexcharts';
-import Card from '../../../hoc/Card/Card';
-import Spinner from '../../UI/Spinner/Spinner';
+import Card from '../../hoc/Card/Card';
+import Spinner from '../UI/Spinner/Spinner';
 
 class Graph extends Component {
     state = {

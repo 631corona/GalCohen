@@ -21,3 +21,11 @@
 .Blog a.active {
     color: #fa923f;
 }
+
+.Blog button{
+    top: 3px;
+    left: 4px;
+    position: absolute;
+    background-color:gainsboro;
+    border: none;
+}

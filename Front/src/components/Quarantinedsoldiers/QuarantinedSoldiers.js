@@ -1,19 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './QuarantinedSoldiers.css';
 import Card from '../../hoc/Card/Card'
 
 const QuarantinedSoldiers = (props) => {
-    const names = props.quarantinedSoldiersNames.map((person) => {
-        return <li className="quarantinedSoldier" key={person.id} >{person.name} </li>
-    })
-
     return (
         <div>
             <Card >
                 <ul className="quarantinedSoldiers">
                     <p className="quarantinedSoldiers"><strong> Quarantined soldiers: </strong></p>
-                    {names}
+                    {props.quarantinedSoldiersNames.map((person) =>
+                        (<li className="quarantinedSoldier" key={person.id} >{person.name} </li>))}
                 </ul>
             </Card>
             <Card className="soldiersAtHome" style={{ height: '100px' }}>
@@ -24,4 +22,10 @@ const QuarantinedSoldiers = (props) => {
     )
 }
 
-export default QuarantinedSoldiers;
+const mapStateToProps = state => {
+    return {
+        quarantinedSoldiersNames: state.soldiers.quarantinedSoldiers
+    };
+};
+
+export default connect(mapStateToProps)(QuarantinedSoldiers);
