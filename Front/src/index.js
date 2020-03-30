@@ -6,13 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import cureReducer from './store/reducers/cure';
+import labs from './store/reducers/labs';
 import soldiresReducer from './store/reducers/soldiers';
+import graph from './store/reducers/graph';
 import thunk from 'redux-thunk';
 
 
 const rootReducer = combineReducers({
-    cure: cureReducer,
+    labs: labs,
+    graph: graph,
     soldiers: soldiresReducer
 });
 

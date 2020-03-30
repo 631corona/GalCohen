@@ -6,16 +6,27 @@ import Header from '../../components/Header/Header';
 import Content from '../../components/Content/Content';
 import Confetti from '../../components/Confetti/Confetti';
 import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/index';
 import Button from '../../components/UI/Button/Button';
 
 class Blog extends Component {
+    // componentDidMount() {
+    //     // this.interval = setInterval(() => this.props.onFindingCure(), 1000);
+    // }
+    // componentWillUnmount() {
+    //     clearInterval(this.interval);
+    // }
+
+    componentWillMount() {
+        this.props.loadLabsData();
+    }
 
     render() {
         let Conffeti = null;
         if (this.props.cureFound) {
             Conffeti = <Confetti />;
         }
-        
+
         return (
             <div className="Blog"  >
                 {Conffeti}
@@ -44,13 +55,14 @@ class Blog extends Component {
 
 const mapStateToProps = state => {
     return {
-        cureFound: state.cure.found
+        cureFound: state.labs.found
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFindingCure: () => dispatch({ type: 'FOUND_CURE' })
+        onFindingCure: () => dispatch(actionCreators.foundCure()),
+        loadLabsData: () => dispatch(actionCreators.getCureDetails())
     };
 };
 

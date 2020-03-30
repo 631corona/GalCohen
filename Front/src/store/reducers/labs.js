@@ -1,11 +1,11 @@
 const initialState = {
-    status: null
+    found: false
 }
 
 const reducer = (state = initialState, action) => {
-    if (action.type === 'MakeStatusPositive') {
+    if (action.type === 'FOUND_CURE') {
         return {
-            status: 1
+            found: true
         }
     }
     return state;

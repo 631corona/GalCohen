@@ -15,7 +15,7 @@ const QuarantinedSoldiers = (props) => {
                 </ul>
             </Card>
             <Card className="soldiersAtHome" style={{ height: '100px' }}>
-                <p className="soldiersAtHome"><strong> Number of soldiers at home:</strong> {props.soldiersAtHome}</p>
+                <p className="soldiersAtHome"><strong> Number of soldiers at home:</strong> {props.numberOfsoldiersAtHome}</p>
             </Card>
         </div>
 
@@ -24,7 +24,8 @@ const QuarantinedSoldiers = (props) => {
 
 const mapStateToProps = state => {
     return {
-        quarantinedSoldiersNames: state.soldiers.quarantinedSoldiers
+        quarantinedSoldiersNames: state.soldiers.quarantinedSoldiers,
+        numberOfsoldiersAtHome: state.soldiers.numberOfsoldiersAtHome
     };
 };
 
