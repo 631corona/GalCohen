@@ -6,6 +6,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     if (action.type === 'FOUND_CURE') {
         return {
+            ...state,
             cureFound: true
         }
     }

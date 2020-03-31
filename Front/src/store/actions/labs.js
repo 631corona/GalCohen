@@ -20,5 +20,4 @@ export const loadCureDetails = () => {
                 dispatch(loadCureData(response.data.labs));
             })
     }
-
 };

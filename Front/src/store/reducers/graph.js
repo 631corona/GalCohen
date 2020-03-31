@@ -47,26 +47,7 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    // if (action.type === 'LOAD_CURE_DETAILS') {
-    //     const updatedData = action.labsData.map(lab => {
-    //         return getStatusNumber(lab.status);
-    //     });
-    //     const updatedCatagories = action.labsData.map(lab => lab.name);
-    //     return {
-    //         ...state,
-    //         options: {
-    //             ...state.options,
-    //             xaxis: {
-    //                 ...state.options.xaxis,
-    //                 categories: updatedCatagories
-    //             }
-    //         },
-    //         series: [{
-    //             name: 'CureFound',
-    //             data: updatedData
-    //         }]
-    //     }
-    // }
+
     return state;
 };
 

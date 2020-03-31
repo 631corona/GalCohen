@@ -2,7 +2,7 @@ table.progressPercentage{
     width:60%;
     align-items: center;
 }
-th.progressPercentage{
+th.progressPercentile{
     padding: 5px;
     font-weight: bold;
 }

@@ -10,12 +10,7 @@ import * as actionCreators from '../../store/actions/index';
 import Button from '../../components/UI/Button/Button';
 
 class Blog extends Component {
-    // componentDidMount() {
-    //     // this.interval = setInterval(() => this.props.onFindingCure(), 1000);
-    // }
-    // componentWillUnmount() {
-    //     clearInterval(this.interval);
-    // }
+
 
     componentWillMount() {
         this.props.loadLabsData();
@@ -47,7 +42,7 @@ class Blog extends Component {
                     </nav>
                 </header>
                 <Content />
-                <Button clicked={() => this.props.onFindingCure()}> נמצאה תרופה </Button>
+                <Button clicked={() => this.props.onFindingCure()} > נמצאה תרופה </Button>
             </div>
         );
     }

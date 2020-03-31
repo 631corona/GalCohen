@@ -1,39 +1,19 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
 
 import Card from '../../hoc/Card/Card';
 import './ProgressPercentage.css';
 
 class ProgressPercentage extends Component {
 
-    state = {
-        labs: []
-    }
-
-    componentDidMount() {
-        axios.get('http://localhost:3000/v1/labs')
-            .then(response => {
-                let labsToUpdate = response.data.labs.map
-                    (lab =>
-                        ({
-                            id: lab.id,
-                            name: lab.name,
-                            ProgressPercentage: lab.progress_percentile,
-                            status: lab.status
-                        })
-                    )
-                this.setState({ labs: labsToUpdate });
-            });
-    }
-
     render() {
-        const labs = this.state.labs.sort((lab1, lab2) => (lab1.name > lab2.name) ? 1 : -1)
-        const labsInTable = labs.map(lab => 
-                <tr key={lab.id} >
-                    <td className="labStatus">{(lab.status === "IN_PROGRESS") ? "IN PROGRESS" : lab.status} </td>
-                    <td className="labProgressPercentage" > {lab.ProgressPercentage} % </td>
-                    <td className="LabName">{lab.name} </td>
-                </tr>
+        const labs = this.props.labsDetails.sort((lab1, lab2) => (lab1.name > lab2.name) ? 1 : -1)
+        const labsInTable = labs.map(lab =>
+            <tr key={lab.id} >
+                <td className="labStatus">{(lab.status === "IN_PROGRESS") ? "IN PROGRESS" : lab.status} </td>
+                <td className="labProgressPercentile" > {lab.progress_percentile} % </td>
+                <td className="LabName">{lab.name} </td>
+            </tr>
         )
 
         return (
@@ -52,5 +32,10 @@ class ProgressPercentage extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        labsDetails: state.labs.labsDetails
+    }
+};
 
-export default ProgressPercentage;
+export default connect(mapStateToProps)(ProgressPercentage);
