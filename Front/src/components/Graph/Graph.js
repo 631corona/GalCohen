@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actionCreators from '../../store/actions/index';
-import {getStatusNumber} from '../../store/utility';
+import { getStatusNumber } from '../../store/utility';
 
 
 import Chart from 'react-apexcharts';
@@ -10,12 +9,8 @@ import Spinner from '../UI/Spinner/Spinner';
 
 class Graph extends Component {
 
-    componentWillMount() {
-        this.props.loadLabsData();
-    }
-
     render() {
-        const series = this.props.series;
+        let series = this.props.series;
         const options = this.props.options;
 
         const updatedData = this.props.labsDetails.map(lab => {
@@ -23,11 +18,11 @@ class Graph extends Component {
         });
         const updatedCatagories = this.props.labsDetails.map(lab => lab.name);
 
-        series[0].data= updatedData;
-        options.xaxis.categories= updatedCatagories;
+        series[0].data = updatedData;
+        options.xaxis.categories = updatedCatagories;
 
         let chart = <Spinner />;
-        if (this.props.series[0].data.length !== 0) {
+        if (series[0].data.length !== 0&&options.xaxis.categories.length!==0) {
             chart =
                 <Chart
                     options={options}
@@ -51,10 +46,5 @@ const mapStateToProps = state => {
         labsDetails: state.labs.labsDetails
     }
 };
-const mapDispatchToProps = dispatch => {
-    return {
-        loadLabsData: () => dispatch(actionCreators.getCureDetails())
-    };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Graph);
+export default connect(mapStateToProps)(Graph);

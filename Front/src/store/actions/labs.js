@@ -7,17 +7,17 @@ export const foundCure = () => {
     };
 };
 
-export const getCureData = (labs) => {
+export const loadCureData = (labs) => {
     return {
         type: actionTypes.LOAD_CURE_DETAILS,
         labsData: labs
     };
 }
-export const getCureDetails = () => {
+export const loadCureDetails = () => {
     return dispatch => {
         axios.get('http://localhost:3000/v1/labs')
             .then(response => {
-                dispatch(getCureData(response.data.labs));
+                dispatch(loadCureData(response.data.labs));
             })
     }
 
