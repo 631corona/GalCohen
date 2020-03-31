@@ -1,2 +1,2 @@
 export const FOUND_CURE = 'FOUND_CURE';
-export const GET_CURE_DETAILS = 'GET_CURE_DETAILS';
+export const LOAD_CURE_DETAILS = 'LOAD_CURE_DETAILS';

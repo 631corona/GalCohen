@@ -1,3 +1,4 @@
+import { getStatusNumber, getStatusTitle } from '../utility';
 
 const initialState = {
     options: {
@@ -20,17 +21,9 @@ const initialState = {
         dataLabels: {
             enabled: true,
             formatter: function (val) {
-                switch (val) {
-                    case (1):
-                        return "FAILED";
-                    case (2):
-                        return "PROGRESS";
-                    case (3):
-                        return "SUCCESS";
-                    default:
-                        return "no status";
-                }
-            },
+                return getStatusTitle(val)
+            }
+            ,
             style: {
                 fontSize: '10px'
             }
@@ -54,14 +47,9 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    if (action.type === 'GET_CURE_DETAILS') {
+    if (action.type === 'LOAD_CURE_DETAILS') {
         const updatedData = action.labsData.map(lab => {
-            const status = {
-                'FAILED': 1,
-                'IN_PROGRESS': 2,
-                'SUCCESS': 3
-            }
-            return status[lab.status];
+            return getStatusNumber(lab.status);
         });
         const updatedCatagories = action.labsData.map(lab => lab.name);
         return {

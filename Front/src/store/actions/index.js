@@ -1,8 +1,10 @@
 export {
-    foundCure
+    foundCure,
+    getCureDetails
 } from './labs';
 
 export {
-    getCureDetails
+    loadCureDetails
 } from './graph';
+
 

@@ -55,14 +55,14 @@ class Blog extends Component {
 
 const mapStateToProps = state => {
     return {
-        cureFound: state.labs.found
+        cureFound: state.labs.cureFound
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         onFindingCure: () => dispatch(actionCreators.foundCure()),
-        loadLabsData: () => dispatch(actionCreators.getCureDetails())
+        loadLabsData: () => dispatch(actionCreators.loadCureDetails())
     };
 };
 
