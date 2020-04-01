@@ -5,14 +5,15 @@ import PopUp from '../UI/PopUp/PopUp';
 
 class HomePage extends Component {
     state = {
-        show: false
+        showPopUp: false
     };
 
-    componentDidMount() {
-        setTimeout(() => {
-            this.setState({ show: true });
-        }, 5000)
+
+
+    popUpClosedHandler = () => {
+        this.setState({ showPopUp: false })
     }
+
     render() {
         return (
             <div className="HomePage">
@@ -25,7 +26,7 @@ class HomePage extends Component {
              <br />
                     ♥ רק בריאות
                  </p>
-                {this.state.show ? <PopUp /> : null}
+                {this.state.showPopUp ? <PopUp show={this.state.showPopUp} popUpClosed={this.popUpClosedHandler} /> : null}
             </div>
         );
 

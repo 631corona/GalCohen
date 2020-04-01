@@ -5,7 +5,7 @@ import Image from './image/image';
 import yossiImg from '../../assets/images/YosiBeingTested.jpg';
 import Card from '../../hoc/Card/Card';
 
-const images = (props) => (
+const images = () => (
     <Card >
         <Image className="FirstPic" src={yossiImg} alt="Yossi" />
         <Image src={yossiImg} alt="Yossi" />
