@@ -11,14 +11,14 @@ const reducer = (state = initialState, action) => {
         }
     }
     if (action.type === 'LOAD_CURE_DETAILS') {
-        const updatedLabsDetails = action.labsData.map(lab => {
-            return ({
+        const updatedLabsDetails = action.labsData.map(lab =>
+            ({
                 name: lab.name,
                 id: lab.id,
                 status: lab.status,
                 progress_percentile: lab.progress_percentile
             })
-        })
+        )
         return {
             ...state,
             labsDetails: updatedLabsDetails
@@ -27,6 +27,7 @@ const reducer = (state = initialState, action) => {
     return state;
 };
 
+export const isCureFound = (state) => state.labs.cureFound;
 
 
 export default reducer;

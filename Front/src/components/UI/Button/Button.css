@@ -1,2 +1,4 @@
-.Button{
+Button:hover{
+    background-color:rgb(241, 210, 214);
+    box-shadow: inset -2px -2px 0 rgb(241, 210, 227);
 }

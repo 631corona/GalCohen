@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
-import './HomePage.css';
+import './AboutUs.css';
 import PopUp from '../UI/PopUp/PopUp';
 
-class HomePage extends Component {
+class AboutUs extends Component {
     state = {
         showPopUp: false
     };
-
-
 
     popUpClosedHandler = () => {
         this.setState({ showPopUp: false })
@@ -16,8 +14,8 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div className="HomePage">
-                <p className="HomePage">
+            <div className="AboutUs">
+                <p className="AboutUs">
                     ברוכים הבאים לאתר הקורונה
             <br />
                     לנוכח המציאות הלא פשוטה בה אנו נמצאים
@@ -33,4 +31,4 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage;
+export default AboutUs;

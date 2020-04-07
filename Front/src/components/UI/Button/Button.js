@@ -1,11 +1,8 @@
 import React from 'react';
-
+import { Button } from '@material-ui/core';
 import './Button.css';
 
-const button = (props) => (
-    <button className="Button" onClick={props.clicked}>
-        {props.children}
-    </button>
-);
-
+function button(props) {
+    return <Button color="default" className="Button" onClick={props.clicked}>{props.children}</Button>;
+}
 export default button;

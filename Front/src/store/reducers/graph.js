@@ -16,7 +16,7 @@ const initialState = {
             }
         },
         fill: {
-            colors: ['#f44336']
+            colors: ['rgb(250, 178, 168)']
         },
         dataLabels: {
             enabled: true,
@@ -47,7 +47,6 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-
     return state;
 };
 

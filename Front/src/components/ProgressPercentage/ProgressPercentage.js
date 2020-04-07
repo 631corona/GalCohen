@@ -21,9 +21,9 @@ class ProgressPercentage extends Component {
                 <table className="progressPercentage">
                     <tbody>
                         <tr className="progressPercentageHeader">
-                            <td><strong>  סטטוס</strong></td>
-                            <td><strong>  אחוזי הצלחה</strong></td>
-                            <td><strong> שם המעבדה</strong> </td>
+                            <td className="labStatusHeader"><strong>  סטטוס</strong></td>
+                            <td className="labProgressPercentileHeader" ><strong>  אחוזי הצלחה</strong></td>
+                            <td className="labNameHeader"><strong> שם המעבדה</strong> </td>
                         </tr>
                         {labsInTable}
                     </tbody>

@@ -6,11 +6,11 @@ import Images from '../../components/Images/Images';
 import Graph from '../../components/Graph/Graph';
 import ProgressPercentage from '../../components/ProgressPercentage/ProgressPercentage';
 import QuarantinedSoldiers from '../../components/Quarantinedsoldiers/QuarantinedSoldiers';
-import HomePage from '../../components/HomePage/HomePage';
+import AboutUs from '../../components/AboutUs/AboutUs';
 
 const content = (props) => (
     <Fragment>
-        <Route path="/" exact component={HomePage} />
+        <Route path="/" exact component={AboutUs} />
         <Route path="/images" component={Images} />
         <Route path="/quarantinedSoldiers" component={QuarantinedSoldiers} />
         <Route path="/cureFoundStatus" component={Graph} />

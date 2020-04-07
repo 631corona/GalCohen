@@ -1,6 +1,7 @@
 export {
     foundCure,
-    loadCureDetails
+    loadCureDetails,
+    loadCureDetailsSuccess
 } from './labs';
 
 

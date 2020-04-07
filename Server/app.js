@@ -17,13 +17,13 @@ app.get("/v1/labs", (req, res, next) => {
                     id: 1,
                     name: "חן",
                     status: status.Success,
-                    progress_percentile: 90
+                    progress_percentile: 100
                 },
                 {
                     id: 2,
                     name: "דן",
                     status: status.Success,
-                    progress_percentile: 99
+                    progress_percentile: 100
                 },
                 {
                     id: 3,
