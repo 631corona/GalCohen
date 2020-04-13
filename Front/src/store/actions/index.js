@@ -4,5 +4,9 @@ export {
     loadCureDetailsSuccess
 } from './labs';
 
+export {
+    auth
+} from './auth.js';
+
 
 

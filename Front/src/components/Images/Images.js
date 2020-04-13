@@ -5,7 +5,7 @@ import yossiImg from '../../assets/images/YosiBeingTested.jpg';
 import Card from '../../hoc/Card/Card';
 
 const images = () => (
-    <Card >
+    <Card rowFlow={true} >
         <img className="yossi" src={yossiImg} alt="Yossi" />
         <img className="yossi" src={yossiImg} alt="Yossi" />
     </Card >

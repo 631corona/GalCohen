@@ -7,16 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import labs from './store/reducers/labs';
-import soldiresReducer from './store/reducers/soldiers';
-import graph from './store/reducers/graph';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import { watchLabs } from './store/sagas/index';
 
 const rootReducer = combineReducers({
-    labs: labs,
-    graph: graph,
-    soldiers: soldiresReducer
+    labs: labs
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -36,7 +32,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk, sagaMiddleware)));
 
-sagaMiddleware.run(watchLabs); 
+sagaMiddleware.run(watchLabs);
 
 ReactDOM.render(<Provider store={store} > <App /></Provider>, document.getElementById('root'));
 

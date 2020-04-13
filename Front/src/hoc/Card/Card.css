@@ -1,12 +1,1 @@
-div.card{
-    box-shadow: 2px 1px 3px pink; 
-    display: flex;
-    flex-flow: row;
-    justify-content: center; 
-    width: 60%;
-    height: 100%;
-    padding: 10px;
-    margin:auto; 
-    margin-top: 20px;
-    background:  rgb(250, 178, 168);
-}
+

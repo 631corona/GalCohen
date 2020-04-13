@@ -2,13 +2,14 @@ p.soldiersAtHome{
     background-color: white;
     border-radius:20px;
     width:50%;
-    height:90%;
+    height:80%;
     display:flex;
     flex-flow: center;
     justify-content: space-around;
     font-size:20px;
     word-spacing: 2px;
     letter-spacing: 1.5px;
+    align-items: center;
 }
 
 p.quarantinedSoldiers{
@@ -22,8 +23,6 @@ li.quarantinedSoldier{
     border-radius:5px;
     margin:15px;
     list-style: none;
-    display: flex;
-    flex-flow: column;
     width: 55%;
     padding: 2px 14px;
     font-size:20px;
