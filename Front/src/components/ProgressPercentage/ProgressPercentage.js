@@ -21,9 +21,6 @@ background-color:white;
 
 const Table = styled.table`
 width:60%;
-
-${Tr}:nth-child(even){
-    background-color:#ffe6e6;
 }
 ${Tr}:nth-child(1){
 
